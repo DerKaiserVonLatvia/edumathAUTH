@@ -10,22 +10,16 @@ DB_PORT
 DB_DATABASE
 */
 const express = require('express');
-const req = require('express/lib/request');
 const cookieParser = require("cookie-parser");
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
-const sql = require("mysql")
 var bodyParser = require('body-parser')
-const bcrypt = require('bcrypt');
 const { receiveMessageOnPort } = require('worker_threads');
 const saltRounds = 10;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-var url = require('url');
 
 const oneDay = 1000 * 60 * 60 * 24;
 
