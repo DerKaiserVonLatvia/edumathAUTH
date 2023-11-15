@@ -43,7 +43,6 @@ app.use(express.static(__dirname));//what?
   
 
 app.get("/course", (r, s) => {
-  s.setHeader("Cache-Control", "no-cache")
   const payload = r.body;
   S = r.session;
   if (S.key) {
@@ -55,9 +54,20 @@ app.get("/course", (r, s) => {
   }
 })
 
+app.get("/home", (r, s) => {
+  const payload = r.body;
+  S = r.session;
+  if (S.key) {
+    console.log("can enter")
+    s.sendFile(__dirname + "/accountPage.html");
+  } else {
+    console.log("cant enter.")
+    s.redirect(303, "/");
+  }
+})
+
 app.post("/accountPage.html", (r, s) => {
   const body = r.body;
-  s.setHeader("Cache-Control", "no-cache")
   console.log("req recieved")
   if (body.key == GIGAKEY) {
     S = r.session;
@@ -67,15 +77,11 @@ app.post("/accountPage.html", (r, s) => {
 })
 
 app.get('/logout', (req, res) => {
-  res.setHeader("Cache-Control", "no-cache")
   req.session.destroy();
   res.redirect('/');
 });
 
-app.get("/client", (req, res) => {
-  res.setHeader("Cache-Control", "no-cache")
 
-})
 
 server.listen(8080, () => {
   console.log("running on 8080");
