@@ -20,7 +20,6 @@ const saltRounds = 10;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.limit('80M'))
 const oneDay = 1000 * 60 * 60 * 24;
 
 var S;

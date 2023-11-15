@@ -20,14 +20,15 @@ function getVideoFromGoogleDocs(vidId, callback){
     {
          url="https://drive.google.com/file/d/1Loi3Szql-BmLr6YjuTsTlDOB0VA24y1x/view?usp=drive_link";   
     }else if (vidId=="002"){
-         url="https://drive.google.com/file/d/1Loi3Szql-BmLr6YjuTsTlDOB0VA24y1x/view?usp=drive_link";
+         url="https://drive.google.com/file/d/1fHB18BsZSm_oFFQmeFlxTrjiqiTPA1lH/view?usp=drive_link";
     } else if(vidId=="003")
     {
-         url="https://drive.google.com/file/d/1Loi3Szql-BmLr6YjuTsTlDOB0VA24y1x/view?usp=drive_link";
-
+         url="https://drive.google.com/file/d/112aTff996V98FxOJEzgdtIfJET05nHEZy/view?usp=drive_link";
     }
     callback(url);
 }
+
+
 videoId((id)=>{
     getVideoFromGoogleDocs(id, (url)=>{
         loadvideo(url)
