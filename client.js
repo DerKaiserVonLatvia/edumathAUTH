@@ -24,7 +24,7 @@ function sendLoginInfo() {
       if (this.responseText=="verified")
       {
         console.log("verification successfull")
-        window.location.href=('http://172.17.105.116:8080/home');
+        window.location.href=('https://distinct-kimono-foal.cyclic.app/home');
       }
 
     }
