@@ -20,14 +20,15 @@ const saltRounds = 10;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-
+app.use(express.limit('80M'))
 const oneDay = 1000 * 60 * 60 * 24;
 
 var S;
 
 const GIGAKEY = "GIGAKEY";
 
-var session = require('express-session')
+var session = require('express-session');
+const exp = require('constants');
 app.set("trust proxy", 1);
 app.use(session({
   secret: "zeftordaunpizanautist",
