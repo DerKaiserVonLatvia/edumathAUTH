@@ -1,10 +1,8 @@
 function loadvideo(videoId){
 
 
-    document.body.innerHTML += `    <video width="960" height="540" controls>
-    <source id="playerSource" src="assets/${videoId}.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-  </video>`
+    document.body.innerHTML += `<iframe src="${videoId}" width="960" height="540" allow="autoplay"></iframe>
+    `
 }
 
 function videoId(callback){
@@ -13,6 +11,25 @@ function videoId(callback){
     callback(urlParams.get("id"));
 }
 
+
+
+function getVideoFromGoogleDocs(vidId, callback){
+
+    var url;
+    if (vidId=="001")
+    {
+         url="https://drive.google.com/file/d/1Loi3Szql-BmLr6YjuTsTlDOB0VA24y1x/view?usp=drive_link";   
+    }else if (vidId=="002"){
+         url="https://drive.google.com/file/d/1Loi3Szql-BmLr6YjuTsTlDOB0VA24y1x/view?usp=drive_link";
+    } else if(vidId=="003")
+    {
+         url="https://drive.google.com/file/d/1Loi3Szql-BmLr6YjuTsTlDOB0VA24y1x/view?usp=drive_link";
+
+    }
+    callback(url);
+}
 videoId((id)=>{
-    loadvideo(id)
+    getVideoFromGoogleDocs(id, (url)=>{
+        loadvideo(url)
+    })
 })
