@@ -1,7 +1,7 @@
 function loadvideo(videoId){
 
 
-    document.body.innerHTML += `<iframe src="${videoId}" width="960" height="540" allow="autoplay"></iframe>
+    document.body.innerHTML += `<iframe src="${videoId}" width="1440" height="810" allow="autoplay"></iframe>
     `
 }
 
