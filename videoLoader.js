@@ -18,12 +18,12 @@ function getVideoFromGoogleDocs(vidId, callback){
     var url;
     if (vidId=="001")
     {
-         url="https://drive.google.com/file/d/1Loi3Szql-BmLr6YjuTsTlDOB0VA24y1x/view?usp=drive_link";   
+         url="https://1drv.ms/v/s!AhiuDj8VzD-wgexKNHsxLyiIIcwaIQ?e=rpzT5P";   
     }else if (vidId=="002"){
-         url="https://drive.google.com/file/d/1fHB18BsZSm_oFFQmeFlxTrjiqiTPA1lH/view?usp=drive_link";
+         url="https://1drv.ms/v/s!AhiuDj8VzD-wgexLrKZDWHL3NC7GTQ?e=EEhUMz";
     } else if(vidId=="003")
     {
-         url="https://drive.google.com/file/d/112aTff996V98FxOJEzgdtIfJET05nHEZy/view?usp=drive_link";
+         url="https://1drv.ms/v/s!AhiuDj8VzD-wgexJUYhbvFgq_ukqaw?e=ubUmlf";
     }
     callback(url);
 }
